@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Product</h1>
+
+<div class="container">
+    <h2>Product List</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Stock price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% products.forEach(product => { %>
+                <tr>
+                    <td><%= product.id_product %></td>
+                    <td><%= product.product_name %></td>
+                    <td><%= numeral(product.product_price).format('0,0') %></td>
+                    <td><%= product.product_quantity %></td>
+                    <td><%= numeral(product.product_price * product.product_quantity).format('0,0') %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
